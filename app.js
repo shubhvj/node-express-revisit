@@ -7,7 +7,7 @@ const parser = require("body-parser");
 
 app.use(parser.urlencoded({ extended: false }));
 
-// app.use('views')
+app.use(Express.static(path.join(__dirname, 'public')))
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
