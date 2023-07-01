@@ -3,15 +3,18 @@ const Express = require("express");
 
 const app = Express();
 
+app.set('view engine', "pug")
+app.set('views', "views")
+
 const parser = require("body-parser");
 
 app.use(parser.urlencoded({ extended: false }));
 
 app.use(Express.static(path.join(__dirname, 'public')))
-const adminRoutes = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.routes);
 app.use(shopRoutes);
 
 app.use("*", (req, res, next) => {
