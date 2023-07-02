@@ -6,12 +6,15 @@ const {
   getIndex,
   getCart,
   getCheckout,
-  getOrders
+  getOrders,
+  getProduct
 } = require("../controllers/shop.controller");
 
 router.get("/", getIndex);
 
 router.get("/products", getProducts);
+
+router.get("/products/:productID", getProduct);
 
 router.get("/cart", getCart);
 
