@@ -1,17 +1,8 @@
 const path = require("path");
 const Express = require("express");
-const expressHandleBars = require("express-handlebars");
 const app = Express();
 
-app.engine(
-  "hbs",
-  expressHandleBars({
-    layoutsDir: "views/layouts",
-    defaultLayout: "main-layout",
-    extname: 'hbs'
-  })
-);
-app.set("view engine", "hbs");
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 const parser = require("body-parser");
